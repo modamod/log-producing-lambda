@@ -1,0 +1,9 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "log-producing"
+s3_bucket = "modamod-test-bucket"
+s3_prefix = "log-producing"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"

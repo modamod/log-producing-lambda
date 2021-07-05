@@ -1,0 +1,12 @@
+repos:
+  - repo: "https://github.com/pre-commit/pre-commit-hooks"
+    rev: v3.2.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+        args: ['--unsafe'] # Added this flag to ensure that check-yaml doesn't fail on CF templates.
+      - id: check-added-large-files
+        args: ['--maxkb=1000'] # Max file size is 10MB, we need to decide on a reasnable size.
+      - id: mixed-line-ending # With the team migrating to Windows, this check is needed to force linux line ending
+        args: ["--fix=lf"]
